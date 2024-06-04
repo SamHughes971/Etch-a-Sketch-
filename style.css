@@ -11,11 +11,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-height: fit-content;
+    max-width: fit-content;
+    max-height:min-content;
     
 }
 .square-element{
     height: 35px;
-    flex: 0 0 calc(12% - 8px);
+    flex: 0 0 calc(6% - 3px);
     border: 1px black solid; 
+    zoom: 1;
 }

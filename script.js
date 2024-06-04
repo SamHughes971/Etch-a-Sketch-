@@ -1,7 +1,7 @@
 const divContainer = document.querySelector('#container');
 
 const rows = 16;
-const cols =16;
+const cols = 16;
 
 function createSquareElements(rows, cols){
     for (let i=0; i < (rows * cols); i++){
