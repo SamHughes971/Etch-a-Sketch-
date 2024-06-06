@@ -12,4 +12,7 @@ function createSquareElements(rows, cols){
     }
 }
 
+divContainer.addEventListener("mouseover", (e) => {
+    e.target.style.backgroundColor  = "red";
+});
 createSquareElements(rows, cols);
