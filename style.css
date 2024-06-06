@@ -6,17 +6,19 @@
 
 
 #container{
+    margin: 0px;
     border: 2px solid red;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: fit-content;
+    max-width:800px;
     max-height:min-content;
     
 }
 .square-element{
     height: 55px;
+    width: 20px;
     flex: 0 0 6%;
     border: 1px black solid; 
     

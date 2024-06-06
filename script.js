@@ -13,6 +13,11 @@ function createSquareElements(rows, cols){
 }
 
 divContainer.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor  = "red";
+    const target = e.target;
+
+    if (target.className === 'square-element'){
+        e.target.style.backgroundColor  = "red";
+    }
 });
+
 createSquareElements(rows, cols);
