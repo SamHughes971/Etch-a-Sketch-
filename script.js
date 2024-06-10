@@ -1,7 +1,6 @@
 const divContainer = document.querySelector('#container');
-
-const rows = 16;
-const cols = 16;
+const button = document.createElement('button');
+document.body.appendChild(button);
 
 function createSquareElements(rows, cols){
     for (let i=0; i < (rows * cols); i++){
@@ -20,4 +19,12 @@ divContainer.addEventListener("mouseover", (e) => {
     }
 });
 
-createSquareElements(rows, cols);
+button.addEventListener('click', () => {
+    
+    const rows = parseInt(prompt('How many rows?'));
+    const cols = parseInt(prompt('How many columns?'));
+    createSquareElements(rows, cols);
+
+    
+})
+
