@@ -20,11 +20,19 @@ divContainer.addEventListener("mouseover", (e) => {
 });
 
 button.addEventListener('click', () => {
+
+    const elements = document.getElementsByClassName("square-element");
     
     const rows = parseInt(prompt('How many rows?'));
     const cols = parseInt(prompt('How many columns?'));
-    createSquareElements(rows, cols);
+    
+    if(divContainer.firstChild){
+        console.log(elements.length)
+        while(elements.length > 0) elements[0].remove();
+        createSquareElements(rows, cols);
+    }else createSquareElements(rows, cols);
 
+    
     
 })
 
