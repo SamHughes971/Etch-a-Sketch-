@@ -1,10 +1,18 @@
 const divContainer = document.querySelector('#container');
-const button = document.createElement('button');
+const buttonReset = document.createElement('button');
+const buttonColour = document.createElement('button')
 const buttonContainer= document.createElement('div');
 
 buttonContainer.setAttribute('id', 'buttonContainerID');
-buttonContainer.appendChild(button);
-button.innerText = 'Start'
+buttonColour.setAttribute('class', 'buttonColour');
+buttonReset.setAttribute('class', 'buttonReset');
+
+buttonContainer.appendChild(buttonReset);
+buttonContainer.appendChild(buttonColour);
+
+buttonColour.innerText = 'Random Colour'
+buttonReset.innerText = 'Start'
+document.body.append(buttonContainer);
 document.body.append(buttonContainer);
 
 function createSquareElements(rows, cols){
@@ -16,28 +24,41 @@ function createSquareElements(rows, cols){
     }
 }
 
+buttonContainer.addEventListener('click', (e) => {
+    buttonReset.innerText = 'Reset'
+    const target = e.target;
+
+    const elements = document.getElementsByClassName("square-element");
+
+    if(target.className === 'buttonColour'){
+        elements.forEach(x => x.toggle('square-element-random'))
+    }
+
+    if(target.className === 'buttonReset'){
+        const rows = parseInt(prompt('How many rows?'));
+        const cols = parseInt(prompt('How many columns?'));
+        if(divContainer.firstChild){
+            while(elements.length > 0) elements[0].remove();
+            
+            createSquareElements(rows, cols); 
+        }else createSquareElements(rows, cols); 
+    }
+
+
+
+})
+
 divContainer.addEventListener("mouseover", (e) => {
     const target = e.target;
 
     if (target.className === 'square-element'){
-        e.target.style.backgroundColor  = "red";
+        target.style.backgroundColor  = "red";
     }
+    if (target.className === 'square-element-random'){
+        target.style.backgroundColor  = "green";
+    }
+    
 });
 
-button.addEventListener('click', () => {
-    button.innerText = 'Reset'
-    const elements = document.getElementsByClassName("square-element");
-    
-    const rows = parseInt(prompt('How many rows?'));
-    const cols = parseInt(prompt('How many columns?'));
-    
-    if(divContainer.firstChild){
-        while(elements.length > 0) elements[0].remove();
-        
-        createSquareElements(rows, cols); 
-    }else createSquareElements(rows, cols);
 
-    
-    
-})
 
