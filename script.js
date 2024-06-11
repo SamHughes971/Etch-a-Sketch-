@@ -24,6 +24,10 @@ function createSquareElements(rows, cols){
     }
 }
 
+function randomColourGenerator(){
+    return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
+}
+
 
 buttonContainer.addEventListener('click', (e) => {
     buttonReset.innerText = 'Reset'
@@ -57,10 +61,11 @@ divContainer.addEventListener("mouseover", (e) => {
         target.style.backgroundColor  = "red";
     }
     if (target.className == "square-element square-element-random" ){
-        target.style.backgroundColor  = "green";
+        target.style.backgroundColor  = randomColourGenerator();
     }
     
 });
+
 
 
 
