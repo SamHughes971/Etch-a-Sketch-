@@ -24,6 +24,7 @@ function createSquareElements(rows, cols){
     }
 }
 
+
 buttonContainer.addEventListener('click', (e) => {
     buttonReset.innerText = 'Reset'
     const target = e.target;
@@ -31,7 +32,9 @@ buttonContainer.addEventListener('click', (e) => {
     const elements = document.getElementsByClassName("square-element");
 
     if(target.className === 'buttonColour'){
-        elements.forEach(x => x.toggle('square-element-random'))
+        for(let i = 0; i < elements.length; i++){
+            elements[i].classList.toggle('square-element-random')
+        }  
     }
 
     if(target.className === 'buttonReset'){
@@ -43,18 +46,17 @@ buttonContainer.addEventListener('click', (e) => {
             createSquareElements(rows, cols); 
         }else createSquareElements(rows, cols); 
     }
-
-
-
 })
+
+
 
 divContainer.addEventListener("mouseover", (e) => {
     const target = e.target;
 
-    if (target.className === 'square-element'){
+    if (target.className == 'square-element'){
         target.style.backgroundColor  = "red";
     }
-    if (target.className === 'square-element-random'){
+    if (target.className == "square-element square-element-random" ){
         target.style.backgroundColor  = "green";
     }
     
