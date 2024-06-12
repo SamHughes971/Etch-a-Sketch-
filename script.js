@@ -10,15 +10,15 @@ buttonReset.setAttribute('class', 'buttonReset');
 buttonContainer.appendChild(buttonReset);
 buttonContainer.appendChild(buttonColour);
 
-buttonColour.innerText = 'Random Colour'
+
 buttonReset.innerText = 'Start'
+buttonColour.innerText = 'Random Colour'
 document.body.append(buttonContainer);
 document.body.append(buttonContainer);
 
 function createSquareElements(rows, cols){
     for (let i=0; i < (rows * cols); i++){
         const divSquares = document.createElement('div')
-        divSquares.innerText = `${i + 1}`
         divSquares.className = "square-element";
         divContainer.append(divSquares);
     }
@@ -38,6 +38,7 @@ buttonContainer.addEventListener('click', (e) => {
     if(target.className === 'buttonColour'){
         for(let i = 0; i < elements.length; i++){
             elements[i].classList.toggle('square-element-random')
+            
         }  
     }
 
@@ -59,9 +60,11 @@ divContainer.addEventListener("mouseover", (e) => {
 
     if (target.className == 'square-element'){
         target.style.backgroundColor  = "red";
+        buttonColour.innerText = 'Random Colour'
     }
     if (target.className == "square-element square-element-random" ){
         target.style.backgroundColor  = randomColourGenerator();
+        buttonColour.innerText = 'Default Colour'
     }
     
 });
