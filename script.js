@@ -1,20 +1,23 @@
 const divContainer = document.querySelector('#container');
 const buttonReset = document.createElement('button');
 const buttonColour = document.createElement('button')
+const buttonOpacity = document.createElement('button')
 const buttonContainer= document.createElement('div');
 
 buttonContainer.setAttribute('id', 'buttonContainerID');
 buttonColour.setAttribute('class', 'buttonColour');
 buttonReset.setAttribute('class', 'buttonReset');
+buttonOpacity.setAttribute('class', 'buttonOpacity');
 
 buttonContainer.appendChild(buttonReset);
 buttonContainer.appendChild(buttonColour);
-
+buttonContainer.appendChild(buttonOpacity);
 
 buttonReset.innerText = 'Start'
 buttonColour.innerText = 'Random Colour'
+buttonOpacity.innerText = 'Change Opacity'
 document.body.append(buttonContainer);
-document.body.append(buttonContainer);
+
 
 function createSquareElements(rows, cols){
     for (let i=0; i < (rows * cols); i++){
