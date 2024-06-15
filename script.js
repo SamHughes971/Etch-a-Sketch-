@@ -16,6 +16,7 @@ buttonContainer.appendChild(buttonOpacity);
 buttonReset.innerText = 'Start'
 buttonColour.innerText = 'Random Colour'
 buttonOpacity.innerText = 'Change Opacity'
+
 document.body.append(buttonContainer);
 
 
@@ -42,6 +43,12 @@ buttonContainer.addEventListener('click', (e) => {
         for(let i = 0; i < elements.length; i++){
             elements[i].classList.toggle('square-element-random')
             
+        }  
+    }
+
+    if(target.className === 'buttonOpacity'){
+        if(i <= 10){
+            elements.style.opacity = i / 10
         }  
     }
 
